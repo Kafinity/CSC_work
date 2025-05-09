@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Imran Jan Seva Kendra</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-logo">
+      <img src="logo-csc.png" alt="CSC Logo" class="logo" />
+    </div>
+    <div class="header-text">
+      <h1>Imran Jan Seva Kendra</h1>
+      <p class="subtitle">All Documents Provider</p>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <input type="text" id="searchInput" placeholder="Search for a document..." />
+    <p id="noResult" style="display: none; text-align: center; color: red; margin-top: 10px;">No results found</p>
+
+    <div class="toolbar-controls">
+      <button id="expandAll" class="btn">Expand All</button>
+      <button id="collapseAll" class="btn">Collapse All</button>
+      <label class="theme-switch">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+  <div class="toolbar-title">Document Checklist</div>
+
+  <div class="container">
+    <div class="accordion-item">
+      <div class="accordion-header">Birth Certificate</div>
+      <div class="accordion-body">
+        <ul>
+          <li>Aadhaar Card / Voter ID</li>
+          <li>Hospital Discharge Slip</li>
+          <li>Parents’ Marriage Certificate</li>
+        </ul>
+        <div class="action-icons">
+          <span class="icon download-icon" title="Download PDF">⬇️</span>
+          <span class="icon share-icon" title="Share">📤</span>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">Income Certificate</div>
+      <div class="accordion-body">
+        <ul>
+          <li>Aadhaar Card</li>
+          <li>Latest Salary Slip / Income Proof</li>
+        </ul>
+        <div class="action-icons">
+          <span class="icon download-icon" title="Download PDF">⬇️</span>
+          <span class="icon share-icon" title="Share">📤</span>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">Domicile Certificate</div>
+      <div class="accordion-body">
+        <ul>
+          <li>Aadhaar Card / Voter ID</li>
+          <li>Passport Size Photo</li>
+          <li>Proof of Residence (Utility Bill)</li>
+        </ul>
+        <div class="action-icons">
+          <span class="icon download-icon" title="Download PDF">⬇️</span>
+          <span class="icon share-icon" title="Share">📤</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>&copy; made by kafinity | All Rights Reserved</footer>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
