@@ -1,0 +1,369 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.5;
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  background: #fff;
+  border-bottom: 4px solid #0058a3;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 80px;
+}
+
+.header-text h1 {
+  font-size: 1.25rem;
+  color: #0058a3;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: #0058a3;
+  margin-top: 4px;
+}
+
+.toolbar {
+  background: #0058a3;
+  color: white;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toolbar-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+#searchInput {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  max-width: 300px;
+}
+
+.toolbar-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 8px 16px;
+  font-size: 1rem;
+  background: #ffffff;
+  color: #0058a3;
+  border: 2px solid #0058a3;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background: #0058a3;
+  color: white;
+}
+
+/* Dark Mode Toggle */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #0058a3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.container {
+  max-width: 800px;
+  margin: 16px auto;
+  padding: 0 12px;
+}
+
+.accordion-item {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.accordion-header {
+  padding: 14px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #0058a3;
+  position: relative;
+}
+
+.accordion-header::after {
+  content: '▸';
+  position: absolute;
+  right: 16px;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.accordion-header.active::after {
+  transform: rotate(90deg);
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 16px;
+}
+
+.accordion-body ul {
+  margin: 12px 0;
+  padding-left: 20px;
+}
+
+.accordion-header.active + .accordion-body {
+  max-height: 300px;
+  padding-bottom: 12px;
+}
+
+.no-results {
+  display: none;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1rem;
+  color: #999;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #777;
+  margin: 24px 0;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: #1e1e1e;
+  color: #eaeaea;
+}
+
+body.dark-mode .toolbar {
+  background: #333;
+}
+
+body.dark-mode .accordion-item {
+  background: #2c2c2c;
+}
+
+body.dark-mode .accordion-header {
+  color: #90cdf4;
+}
+
+body.dark-mode .btn {
+  background: #444;
+  color: white;
+  border-color: white;
+}
+.faq-section {
+  background: #f1f1f1;
+  padding: 24px 16px;
+  border-top: 2px solid #ccc;
+  margin-top: 32px;
+}
+
+.faq-section h2 {
+  font-size: 1.5rem;
+  color: #0058a3;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-item h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Dark Mode Support */
+body.dark-mode .faq-section {
+  background: #2a2a2a;
+}
+body.dark-mode .faq-section h2 {
+  color:#90cdf4;
+}
+
+body.dark-mode .faq-item h3 {
+  color: #eaeaea;
+}
+
+body.dark-mode .faq-item p {
+  color: #ccc;
+}
+
+.about-us-section {
+  background: #f4f4f4;
+  color: #333;
+  padding: 30px 16px;
+  text-align: center;
+  margin-top: 0px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-top: 1px solid #ccc;
+}
+}
+
+.about-us-section h2 {
+  font-size: 1.5rem;
+  color:#0058a3;
+  margin-bottom: 16px;
+}
+
+.about-us-section p {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.contact-card {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.contact-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #0058a3;
+}
+
+.contact-card p {
+  font-size: 0.95rem;
+}
+
+/* Dark Mode Styling */
+body.dark-mode .about-us-section {
+  background: #1e1e1e;
+  color: #eaeaea;
+}
+
+body.dark-mode .about-us-section h2 {
+  color: #90cdf4;
+}
+
+body.dark-mode .contact-card {
+  border-top: 1px solid #444;
+}
+
+body.dark-mode .contact-card h3 {
+  color: #90cdf4;
+}
+
+body.dark-mode .contact-card p {
+  color: #d0d0d0;
+}
+.accordion-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.accordion-header .icon {
+  display: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: color 0.2s;
+}
+.accordion-header .icon:hover {
+  color: #00448f;
+}
+.accordion-header.active .icon {
+  display: inline-block;
+}
+/* Dark mode icon colors */
+body.dark-mode .accordion-header .download-icon,
+body.dark-mode .accordion-header .share-icon {
+  color: #e0e0e0;    /* हल्का ग्रे, dark पर दिखने में आसान */
+}
+
+body.dark-mode .accordion-header .download-icon:hover,
+body.dark-mode .accordion-header .share-icon:hover {
+  color: #ffffff;    /* hover पर सफ़ेद करके क्लिकेबल फील दें */
+}
+.icon {
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.accordion-header .icon:hover {
+  color: #007bff;
+}
+
+body.dark-mode .accordion-header .icon {
+  color: #90cdf4;
+}
